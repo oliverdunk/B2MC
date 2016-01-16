@@ -1,0 +1,7 @@
+name: B2MC
+version: 1.0
+main: com.oliverdunk.b2mc.B2MC
+
+commands:
+  runbackup:
+    usage: /runbackup

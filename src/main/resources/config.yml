@@ -1,0 +1,6 @@
+b2:
+  accountID: test
+  applicationKey: test
+  ## Has to be globally unique, and use only letters and number plus -'s (Blame Backblaze!)
+  ## Use only for backups. This bucket will be wiped before each backup.
+  bucketName: b2mc-testing
