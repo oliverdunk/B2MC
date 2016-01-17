@@ -10,6 +10,7 @@ deploy:
   provider: releases
   api_key:
     secure: o8Qp7jH9H5D99hvy9GulOTjDlWLP2E7Iv6H6jIULF/B5vfeuCynANWBveCTvW0m7DNjTOByK/bkjXi6xnFmVR0TTcdliB0WBpnwYReGKqPkFkLzuVUFYWAzmehcsqRB6a9u11eyZ5afjNgBk/GU+VaQ8TRXXUck09Ogba2SuggFn3Qsf6eg4PMHyRhgaDKlhKEtJaRwiW+St7cxl1/1bhZGdh77+PAsAGpXkAtDebRHbK92sp1lNfpPXm8X+Xp63xOczgXi1a5AqbjdYzqekqRSq+CfvqiJ/q2kedQdbJtrM5dczVzIu+8ThE8UIHzX8VmZarUNN/wpTLSThMLR+YJEBLIgp+QlEKyhsWKDuNZ22Vj+nqPqXAsDedze9G6yvWTmzPE7UtM7Kc/r1gnEhdZUtNsGCJ2wBc5g0hrPbJeY6sR4rFNjOshmHZxXKqOBZGCS8Mwe5XKUbOaurpTT5qx65GrjRsgV++uKogDfabenonV8cTdNW0xZ3ELNQDbuF5a/7j8Wm4WujEUCYstZorLc7G8wlqwEsBow4eGDg2DDLbl8UQC2HE3pUse1A7F4Q9twWF9+tJy7k/GwCVaPQ3reYcPyazwkBUrajpaQ3YrYOeMLXVwSYsmzh1M2uT+HM5tgvZEyhvFFBepLOwd4/2tjMJE07k5bqE+otVUkje7M=
-  file: target/b2mc-1.0-SNAPSHOT.jar
+  file: target/B2MC.jar
   on:
-    repo: oliverdunk/B2MC
+    tags: true
+    all_branches: true
