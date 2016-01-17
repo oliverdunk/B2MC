@@ -1,6 +1,6 @@
-package com.oliverdunk.b2mc.commands;
+package com.oliverdunk.b2mc.mods.bukkit.commands;
 
-import com.oliverdunk.b2mc.B2MC;
+import com.oliverdunk.b2mc.mods.bukkit.B2MC;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -14,7 +14,6 @@ public class RunBackupCommand implements CommandExecutor{
         this.b2mc = b2mc;
     }
 
-    @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
         if(commandSender.hasPermission("b2mc.runbackup")){
             commandSender.sendMessage(ChatColor.GREEN + "Starting backup. Progress will be shown in the console...");

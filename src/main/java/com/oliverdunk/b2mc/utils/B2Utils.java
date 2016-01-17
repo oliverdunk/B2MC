@@ -1,7 +1,7 @@
 package com.oliverdunk.b2mc.utils;
 
-import com.oliverdunk.b2mc.B2MC;
-import com.oliverdunk.b2mc.Config;
+import com.oliverdunk.b2mc.api.AbstractConfig;
+import com.oliverdunk.b2mc.runnables.BackupRunner;
 import com.oliverdunk.jb2.api.B2API;
 import com.oliverdunk.jb2.exceptions.B2APIException;
 import com.oliverdunk.jb2.models.*;
@@ -11,11 +11,11 @@ import java.util.List;
 
 public class B2Utils {
 
-    private B2MC b2mc;
-    private Config config;
+    private BackupRunner backupRunner;
+    private AbstractConfig config;
 
-    public B2Utils(B2MC b2MC, Config config){
-        this.b2mc = b2MC;
+    public B2Utils(BackupRunner backupRunner, AbstractConfig config){
+        this.backupRunner = backupRunner;
         this.config = config;
     }
 
@@ -30,9 +30,9 @@ public class B2Utils {
             List<B2Bucket> buckets = B2API.listBuckets(session);
             for(B2Bucket bucket : buckets) {
                 if(!(bucket.getName().equals(config.getBucketName()))) return;
-                b2mc.getLogger().info("Deleting old backups before starting upload...");
+                backupRunner.log("Deleting old backups before starting upload...");
                 deleteOldBackups(session, bucket);
-                b2mc.getLogger().info("Continuing upload...");
+                backupRunner.log("Continuing upload...");
                 B2UploadRequest request = B2API.getUploadURL(session, bucket);
                 B2API.uploadFile(request, toUpload, System.currentTimeMillis() + ".zip");
                 return;
@@ -40,7 +40,7 @@ public class B2Utils {
             B2API.createBucket(session, config.getBucketName(), BucketType.ALL_PRIVATE);
             uploadBackup(session, toUpload);
         }catch(B2APIException ex){
-            b2mc.getLogger().info("An error occurred while uploading the backup. (" + ex.getErrorMessage() + ")");
+            backupRunner.log("An error occurred while uploading the backup. (" + ex.getErrorMessage() + ")");
         }
     }
 

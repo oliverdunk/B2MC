@@ -13,6 +13,10 @@
             <id>spigot</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+        <repository>
+            <id>sponge</id>
+            <url>http://repo.spongepowered.org/maven</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -20,6 +24,11 @@
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.spongepowered</groupId>
+            <artifactId>spongeapi</artifactId>
+            <version>3.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.oliverdunk</groupId>
