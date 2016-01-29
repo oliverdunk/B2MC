@@ -35,6 +35,11 @@
             <artifactId>JB2</artifactId>
             <version>1.0-RELEASE</version>
         </dependency>
+       <dependency>
+            <groupId>org.json</groupId>
+	   <artifactId>json</artifactId>
+	   <version>20151123</version>         
+        </dependency>
     </dependencies>
 
     <build>
@@ -70,6 +75,7 @@
                             <artifactSet>
                                 <includes>
                                     <include>com.oliverdunk:*</include>
+                                    <include>org.json:*</include>
                                 </includes>
                             </artifactSet>
                         </configuration>
